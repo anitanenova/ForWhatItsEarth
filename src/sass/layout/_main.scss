@@ -1,4 +1,7 @@
 .site-content {
   padding-top: 11.55em;
+
+  @media (max-width: $breakpoint-medium) {
+    padding-top: 4.75em;
+  }
 }
- 
