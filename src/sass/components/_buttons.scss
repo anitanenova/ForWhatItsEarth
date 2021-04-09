@@ -1,6 +1,10 @@
 .button {
   text-decoration: none;
   display: inline-block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 
   &:hover {
     cursor: pointer;
@@ -14,21 +18,21 @@
     font-weight: 700;
   }
 
-  &-continue {
+  &-underline{
     color: $color-copy-dark;
+    font-size: 1em;
     font-weight: 700;
-    display: flex;
+    font-family: $font-primary;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid $color-copy-dark;
+    background-color: $color-bg-white;
+    padding-bottom: 0.625em;
+    width: fit-content;
+  }
 
-    &-right {
-      img {
-        margin-left: 0.5em;
-      }
-    }
-
-    &-left {
-      img {
-        margin-right: 0.625em;
-      }
-    }
+  &-arrow-right{
+display: block;
+margin-left: 1.25em;
   }
 }

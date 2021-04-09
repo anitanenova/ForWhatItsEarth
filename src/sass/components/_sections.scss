@@ -1,0 +1,58 @@
+.section-articles{
+    margin: 1.875em 2em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-tags{
+    padding: 1.25em 0;
+    
+    .tags-wrapper{
+        width: 100%;
+        display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    }
+    .tags-title{
+        color: $color-copy-dark;
+        opacity: 0.5;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        margin: 0 1.625em 0 0;
+    }
+
+    .menu{
+        padding-left: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .menu-item-link{
+        display: block;
+        padding: 0.5em 1em;
+        text-decoration: none;
+
+        .heading-title{
+        color: $color-copy-dark;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        margin: 0;
+        }
+    }
+}
+
+.section-posted{
+    .posted-article{
+        margin-top: 4.375em;
+    }
+}
