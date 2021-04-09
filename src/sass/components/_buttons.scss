@@ -1,0 +1,34 @@
+.button {
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &-primary {
+    background-color: $color-copy-dark;
+    border-radius: $radius-primary;
+    padding: 0.7em 0.875em;
+    color: $color-bg-white;
+    font-weight: 700;
+  }
+
+  &-continue {
+    color: $color-copy-dark;
+    font-weight: 700;
+    display: flex;
+
+    &-right {
+      img {
+        margin-left: 0.5em;
+      }
+    }
+
+    &-left {
+      img {
+        margin-right: 0.625em;
+      }
+    }
+  }
+}

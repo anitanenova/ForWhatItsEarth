@@ -1,0 +1,23 @@
+.section-heading {
+  a {
+    text-decoration: none;
+
+    .heading-title {
+     // color: $color-copy-dark;
+    }
+  }
+
+  .heading-primary {
+    .heading {
+      &-title {
+        font-weight: 800;
+        text-transform: uppercase;
+        margin: 0.5em 0;
+
+        @media (max-width: $breakpoint-normal) {
+          margin: 0.5em 0 0 0;
+        }
+      }
+    }
+  }
+}
