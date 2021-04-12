@@ -9,7 +9,7 @@
 
   @media (max-width: $breakpoint-medium) {
     padding: 0;
-    max-height: 4.75em;
+    max-height: 3.625em;
   }
 }
 
@@ -47,7 +47,7 @@
     }
 
     @media (max-width: $breakpoint-medium) {
-      padding: 0.25em 0;
+      padding: 0;
 
       .mobile-menu {
         display: block;
@@ -56,6 +56,13 @@
 
       .site-branding {
         padding-left: 1.25em;
+
+        .site-title {
+          a {
+            width: 12.5em;
+            height: 2em;
+          }
+        }
       }
     }
   }

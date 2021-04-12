@@ -53,10 +53,42 @@
       margin: 0;
     }
   }
+  @media (max-width: $breakpoint-medium) {
+    padding: 0;
+
+    .tags-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .tags-title {
+      margin: 0 0 0.625em 0;
+    }
+
+    .menu {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .menu-item-link {
+      padding: 0 1em 0.625em 0;
+    }
+  }
 }
 
 .section-posted {
   .posted-article {
     margin-top: 4.375em;
+  }
+
+  @media (max-width: $breakpoint-medium) {
+    .posted-article {
+      margin-top: 1.625em;
+
+      & > div {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    }
   }
 }
