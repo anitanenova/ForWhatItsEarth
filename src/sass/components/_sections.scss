@@ -1,9 +1,15 @@
 .section-articles {
-  margin: 1.875em 2em;
+  margin: 1.875em auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  max-width: 120em;
+
+  @media (max-width: 2000px) {
+    margin: 1.875em 2em;
+  }
 
   @media (max-width: $breakpoint-medium) {
     flex-direction: column;

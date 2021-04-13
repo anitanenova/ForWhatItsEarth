@@ -400,10 +400,15 @@ summary {
     width: 12.5em;
     height: 2em; } }
 
+.site-header-primary .site-navigation-primary {
+  max-width: 18.75em;
+  width: 100%;
+  margin-right: 1em; }
+
 .site-header-primary .site-navigation-primary .menu {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding-left: 0;
   list-style: none;
@@ -441,7 +446,8 @@ summary {
   max-width: 18.75em;
   padding: 0.875em 1em;
   border: 2px solid #000000;
-  box-shadow: 10px 10px 0px #ffe600; }
+  box-shadow: 10px 10px 0px #ffe600;
+  margin-left: 1em; }
 
 .search-wrapper .search-input {
   outline: none;
@@ -540,11 +546,16 @@ summary {
   margin-left: 1.25em; }
 
 .section-articles {
-  margin: 1.875em 2em;
+  margin: 1.875em auto;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  max-width: 120em; }
+
+@media (max-width: 2000px) {
+  .section-articles {
+    margin: 1.875em 2em; } }
 
 @media (max-width: 960px) {
   .section-articles {
@@ -629,6 +640,18 @@ summary {
 .article {
   width: 100%; }
 
+.article-dark-mode .meta-tag {
+  color: #ffe600; }
+
+.article-dark-mode .meta-tag::after {
+  border-bottom: 10px solid #363636; }
+
+.article-white-mode .meta-tag {
+  color: #000000; }
+
+.article-white-mode .meta-tag::after {
+  border-bottom: 10px solid #ffe600; }
+
 .article-categorie {
   position: relative; }
 
@@ -660,6 +683,24 @@ summary {
     left: 0;
     top: 0; } }
 
+.article-title {
+  font-weight: 700;
+  font-size: 1.625em;
+  text-transform: uppercase;
+  margin: 1.25rem 0 0 0; }
+
+@media (max-width: 768px) {
+  .article-title {
+    font-size: 1.75em; } }
+
+@media (max-width: 640px) {
+  .article-title {
+    font-size: 1.25em; } }
+
+@media (max-width: 500px) {
+  .article-title {
+    font-size: 1em; } }
+
 .article-card {
   position: relative;
   width: 100%;
@@ -671,32 +712,31 @@ summary {
 .article-card:not(:last-child) {
   margin-right: 1.25em; }
 
-.article-card .thumbnail-title {
-  background-color: #ffffff;
+.article-card .article-title-wrapper {
+  position: absolute;
+  bottom: 1.625em;
+  padding: 0 1.875em;
+  text-align: center; }
+
+.article-card .article-title {
   color: #000000;
+  background-color: #ffffff;
   font-weight: 700;
   font-size: 1.5em;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  margin-left: 1.875em;
-  margin-right: 1.875em;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  display: inline;
+  line-height: 1.5;
+  box-shadow: 0px 0px 0 0.25em #ffffff; }
 
 @media (max-width: 1440px) {
-  .article-card .thumbnail-title {
-    font-size: 1.25rem;
-    line-height: 1.25rem; } }
+  .article-card .article-title-wrapper {
+    padding: 0 1em; }
+  .article-card .article-title {
+    font-size: 1.25rem; } }
 
 @media (max-width: 1200px) {
-  .article-card .thumbnail-title {
-    margin-left: 1em;
-    margin-right: 1em; } }
-
-@media (max-width: 1023px) {
-  .article-card .thumbnail-title {
-    font-size: 1rem;
-    line-height: 1rem; } }
+  .article-card .article-title {
+    font-size: 1rem; } }
 
 @media (max-width: 960px) {
   .article-card {
@@ -708,14 +748,21 @@ summary {
     padding-top: 50%; }
   .article-card:first-child .thumbnail {
     height: 100%; }
-  .article-card:first-child .thumbnail-title {
-    width: 100%;
+  .article-card:first-child .article-title-wrapper {
     padding: 1em 1.625em;
     bottom: 0;
     margin: 0;
-    height: 4em;
     background-color: #1c1c1c;
-    color: #ffffff; }
+    color: #ffffff;
+    width: fit-content;
+    height: fit-content;
+    box-sizing: content-box; }
+  .article-card:first-child .article-title {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    box-shadow: none; }
+  .article-card:first-child .article-meta {
+    display: none; }
   .article-card:not(:first-child) {
     background-color: #000000;
     display: grid;
@@ -723,25 +770,50 @@ summary {
     grid-column-gap: 1em;
     grid-template-rows: auto 1fr;
     margin: 0;
+    padding: 1em 1em 0 1em; }
+  .article-card:not(:first-child):last-child {
     padding: 1em; }
   .article-card:not(:first-child) .article-thumbnail {
     grid-row: 1/3; }
-  .article-card:not(:first-child) .thumbnail-title {
+  .article-card:not(:first-child) .article-title-wrapper {
+    position: inherit;
+    bottom: 0;
+    padding: 0;
+    text-align: start; }
+  .article-card:not(:first-child) .article-title {
     margin: 0;
     background-color: #000000;
     color: #ffffff;
     position: inherit;
     line-height: 1.125;
-    text-align: start;
-    text-transform: none; } }
+    text-transform: none;
+    box-shadow: none; }
+  .article-card .article-title {
+    font-size: 1.625em; } }
 
-.article-tag {
+@media (max-width: 768px) {
+  .article-card .article-title {
+    font-size: 1.75em; } }
+
+@media (max-width: 640px) {
+  .article-card .article-title {
+    font-size: 1.25em; } }
+
+@media (max-width: 500px) {
+  .article-card .article-title {
+    font-size: 1em; } }
+
+.article-meta {
   display: none;
   margin: 0 0 0.5em 0;
   grid-row: 1/2;
   text-decoration: none; }
 
-.article-tag .tag-title {
+@media (max-width: 960px) {
+  .article-meta {
+    display: block; } }
+
+.meta-tag {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 0.875em;
@@ -749,31 +821,16 @@ summary {
   margin: 0;
   position: relative;
   z-index: 0;
-  width: fit-content; }
+  width: fit-content;
+  font-family: "Roboto Condensed", sans-serif; }
 
-.article-tag .tag-title:after {
+.meta-tag:after {
   content: "";
   position: absolute;
   z-index: -1;
   top: 0.5em;
   left: 0;
   width: 100%; }
-
-.article-tag-dark-mode .tag-title {
-  color: #ffe600; }
-
-.article-tag-dark-mode .tag-title::after {
-  border-bottom: 10px solid #363636; }
-
-.article-tag-white-mode .tag-title {
-  color: #000000; }
-
-.article-tag-white-mode .tag-title::after {
-  border-bottom: 10px solid #ffe600; }
-
-@media (max-width: 960px) {
-  .article-tag {
-    display: block; } }
 
 .article-thumbnail {
   position: relative;
@@ -837,12 +894,6 @@ summary {
   font-family: "Rasa", serif;
   color: #000000; }
 
-.article-title {
-  font-weight: 700;
-  font-size: 1.625em;
-  text-transform: uppercase;
-  margin: 1.25rem 0 0 0; }
-
 .article-exept {
   margin: 1.875em 0 2.375em 0; }
 
@@ -863,7 +914,6 @@ summary {
     clip-path: none; }
   .article-title {
     margin: 0.5em 0 0 0;
-    font-size: 1em;
     line-height: 1.125;
     text-transform: none; } }
 

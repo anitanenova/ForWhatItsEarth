@@ -68,10 +68,14 @@
   }
 
   .site-navigation-primary {
+    max-width: 18.75em;
+    width: 100%;
+    margin-right: 1em;
+
     .menu {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       padding-left: 0;
       list-style: none;
@@ -116,6 +120,7 @@
   padding: 0.875em 1em;
   border: 2px solid $color-copy-dark;
   box-shadow: $shadow-primary;
+  margin-left: 1em;
 
   .search-input {
     &::placeholder {
