@@ -212,18 +212,18 @@
   box-shadow: 0 2.5em 0 -1.5em;
 
   .thumbnail {
-    clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%, 0% 18%);
+    clip-path: polygon(4em 0, 40em 0, 40em 40em, 0 40em, 0 4em);
   }
 }
 
 .border-piece {
   position: absolute;
-  top: 0;
+  top: -0.0625em;
   left: 0;
   content: "";
   display: block;
-  border-top: 4.1875em solid transparent;
-  border-right: 4.1875em solid $color-primary;
+  border-top: 4em solid transparent;
+  border-right: 4em solid $color-primary;
 
   &::after {
     position: absolute;
