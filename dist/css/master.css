@@ -629,6 +629,37 @@ summary {
 .article {
   width: 100%; }
 
+.article-categorie {
+  position: relative; }
+
+.article-categorie .categorie-wrapper {
+  padding: 0.5em 0.875em;
+  background-color: #ffe600;
+  width: fit-content;
+  position: absolute;
+  transform: rotate(-90deg);
+  left: -5em;
+  top: 6.25em; }
+
+.article-categorie .categorie-title {
+  color: #000000;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.125; }
+
+@media (max-width: 1280px) {
+  .article-categorie {
+    margin: 0.625em 0 1.625em 0;
+    border-bottom: 2px solid #000000; }
+  .article-categorie .categorie-wrapper {
+    position: static;
+    transform: none;
+    left: 0;
+    top: 0; } }
+
 .article-card {
   position: relative;
   width: 100%;

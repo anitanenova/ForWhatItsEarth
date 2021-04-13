@@ -2,6 +2,42 @@
   width: 100%;
 }
 
+.article-categorie {
+  position: relative;
+
+  .categorie-wrapper {
+    padding: 0.5em 0.875em;
+    background-color: $color-primary;
+    width: fit-content;
+    position: absolute;
+    transform: rotate(-90deg);
+    left: -5em;
+    top: 6.25em;
+  }
+
+  .categorie-title {
+    color: $color-copy-dark;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.125;
+  }
+
+  @media (max-width: 1280px) {
+    margin: 0.625em 0 1.625em 0;
+    border-bottom: 2px solid $color-copy-dark;
+
+    .categorie-wrapper {
+      position: static;
+      transform: none;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
 .article-card {
   position: relative;
   width: 100%;
